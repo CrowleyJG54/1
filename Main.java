@@ -39,11 +39,12 @@ public class Main {
 
             int sumRom = x + y;                              // арифметические операции
             int differenceRom = x - y;
-            if (differenceRom < 0) {
-                throw new Exception("В римской системе счисления нет отрицательных чисел");  // исключение на отрицательные значения в римских расчетах
-            }
             int multiplicationRom = x * y;
             int divisionRom = x / y;
+
+            if ((operation == '-') && (differenceRom < 0)) {
+                throw new Exception("В римской системе счисления нет отрицательных чисел");  // исключение на отрицательные значения в римских расчетах
+            }
 
 
             if ((x == 0) || ( y == 0) || (x < 1) || (y < 1) || (x > 10) || (y > 10)) {
@@ -61,6 +62,7 @@ public class Main {
                 String ansver = romeNumbers[divisionRom];
                 System.out.println(ansver);
             }
+
         }
         // конец римского калькулятора
         // начало арабского калькулятора
